@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { describe, expect, test } from 'vitest';
 
 import { HttpPostClientSpy } from '@/data/test/mock-http-client';
@@ -9,7 +10,7 @@ type SutTypes = {
 };
 
 // Design pattern Factory
-const makeSut = (url = 'any_url'): SutTypes => {
+const makeSut = (url = faker.internet.url()): SutTypes => {
   const httpPostClientSpy = new HttpPostClientSpy();
   const sut = new RemoteAuthentication(url, httpPostClientSpy); // System under test: Objeto sendo testado [RemoteAuthentication]
 
@@ -18,7 +19,7 @@ const makeSut = (url = 'any_url'): SutTypes => {
 
 describe('RemoteAuthentication', () => {
   test('Should call HttpPostClient with correct URL', async () => {
-    const url = 'any_url';
+    const url = faker.internet.url();
     const { sut, httpPostClientSpy } = makeSut(url);
 
     await sut.auth();
