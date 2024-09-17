@@ -1,3 +1,7 @@
+export type HttpPostParams = {
+  url: string;
+};
+
 /**
  * Ao definir como HttpPostClient e não HttpClient
  * fica mais fácil de manipular pois quando esta classe
@@ -5,5 +9,5 @@
  * SOLID: ISP - Interface Segregation Principal.
  */
 export interface IHttpPostClient {
-  post(url: string): Promise<void>;
+  post(params: HttpPostParams): Promise<void>;
 }
