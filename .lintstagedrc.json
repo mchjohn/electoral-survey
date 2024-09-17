@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
     "prettier --write",
-    "pnpm run test:staged"
+    "pnpm test:staged"
   ]
 }

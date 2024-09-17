@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest --passWithNoTests",
-    "test:watch": "pnpm test -- --watch",
-    "test:staged": "pnpm test -- --findRelatedTests",
+    "test:watch": "pnpm test",
+    "test:staged": "pnpm vitest related --run",
     "test:ci": "pnpm test -- --coverage"
   },
   "dependencies": {
