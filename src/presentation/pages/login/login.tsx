@@ -1,7 +1,7 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
 import AuthHeader from '@/presentation/components/auth-header';
-import LoginFooter from '@/presentation/components/login-footer';
+import Footer from '@/presentation/components/footer';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
 
@@ -35,7 +35,7 @@ export function Login() {
         </div>
       </form>
 
-      <LoginFooter />
+      <Footer />
     </div>
   );
 }

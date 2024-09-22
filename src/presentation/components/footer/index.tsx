@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-function LoginFooter() {
+function Footer() {
   return (
     <footer className="h-44 text-zinc-400 flex items-end justify-center pb-8">
       <p>Criado por Michel John - 2024</p>
@@ -8,4 +8,4 @@ function LoginFooter() {
   );
 }
 
-export default memo(LoginFooter);
+export default memo(Footer);
