@@ -1,6 +1,7 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
 import AuthHeader from '@/presentation/components/auth-header';
+import AuthLink from '@/presentation/components/auth-link';
 import Footer from '@/presentation/components/footer';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
@@ -27,12 +28,7 @@ export function Login() {
           </Button>
         </div>
 
-        <div className="flex flex-col mt-6 gap-6">
-          <span className="text-center text-sm text-zinc-400">ou</span>
-          <span className="text-center text-sm cursor-pointer hover:underline">
-            Criar uma conta
-          </span>
-        </div>
+        <AuthLink text="Criar uma conta" />
       </form>
 
       <Footer />
