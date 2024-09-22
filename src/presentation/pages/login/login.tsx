@@ -1,16 +1,13 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import { Logo } from '@/presentation/components/logo';
+import { AuthHeader } from '@/presentation/components/auth-header';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
 
 export function Login() {
   return (
     <div className="flex h-screen w-full flex-col">
-      <header className="text-zinc-50 py-4 pl-10">
-        <Logo />
-        <h1 className="text-lg">Pesquisa eleitoral</h1>
-      </header>
+      <AuthHeader />
 
       <form action="" className="text-zinc-50 m-auto w-10/12 md:w-96">
         <h2 className="text-lg mb-4">Login</h2>
