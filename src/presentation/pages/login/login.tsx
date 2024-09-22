@@ -1,8 +1,8 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { logo } from '@/constants/images';
+import { Button } from '@/presentation/components/ui/button';
+import { Input } from '@/presentation/components/ui/input';
 
 export function Login() {
   return (
