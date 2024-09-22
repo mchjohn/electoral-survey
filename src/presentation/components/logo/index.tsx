@@ -1,5 +1,8 @@
 import { logo } from '@/constants/images';
+import { memo } from 'react';
 
-export function Logo() {
+function Logo() {
   return <img src={logo} alt="" className="w-20 md:w-32" />;
 }
+
+export default memo(Logo);

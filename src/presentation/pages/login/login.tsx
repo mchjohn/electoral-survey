@@ -1,8 +1,6 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import AuthHeader from '@/presentation/components/auth-header';
-import AuthLink from '@/presentation/components/auth-link';
-import Footer from '@/presentation/components/footer';
+import { AuthHeader, AuthLink, Footer } from '@/presentation/components';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
 

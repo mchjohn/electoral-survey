@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { Logo } from '../logo';
+import { Logo } from '..';
 
 function AuthHeader() {
   return (
