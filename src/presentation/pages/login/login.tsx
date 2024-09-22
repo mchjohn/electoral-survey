@@ -1,6 +1,7 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import { AuthHeader } from '@/presentation/components/auth-header';
+import AuthHeader from '@/presentation/components/auth-header';
+import LoginFooter from '@/presentation/components/login-footer';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
 
@@ -34,9 +35,7 @@ export function Login() {
         </div>
       </form>
 
-      <footer className="h-44 text-zinc-400 flex items-end justify-center pb-8">
-        <p>Criado por Michel John - 2024</p>
-      </footer>
+      <LoginFooter />
     </div>
   );
 }
