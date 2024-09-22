@@ -1,6 +1,6 @@
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import { logo } from '@/constants/images';
+import { Logo } from '@/presentation/components/logo';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
 
@@ -8,7 +8,7 @@ export function Login() {
   return (
     <div className="flex h-screen w-full flex-col">
       <header className="text-zinc-50 py-4 pl-10">
-        <img src={logo} alt="" className="w-20 md:w-32" />
+        <Logo />
         <h1 className="text-lg">Pesquisa eleitoral</h1>
       </header>
 
