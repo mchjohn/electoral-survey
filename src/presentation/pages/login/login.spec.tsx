@@ -11,7 +11,7 @@ describe('Login component', () => {
     expect(formContent.getElementsByTagName('span').length).toBe(0);
   });
 
-  test('Should not spinner inside the button on start app', () => {
+  test('Should not render spinner inside the button on start app', () => {
     const { getByTestId } = render(<Login />);
     const formContent = getByTestId('form-button');
 
