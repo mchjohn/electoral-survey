@@ -1,16 +1,31 @@
-import { render, RenderResult } from '@testing-library/react';
+import { fireEvent, render, RenderResult } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 
+import { IValidation } from '@/presentation/protocols/validation';
 import { Login } from './login';
+
+class ValidationSpy implements IValidation {
+  errorMessage: string;
+
+  input: object;
+
+  validate(input: object): string {
+    this.input = input;
+    return this.errorMessage;
+  }
+}
 
 type SutTypes = {
   sut: RenderResult;
+  validationSpy: ValidationSpy;
 };
 
 const makeSut = (): SutTypes => {
-  const sut = render(<Login />);
+  const validationSpy = new ValidationSpy();
 
-  return { sut };
+  const sut = render(<Login validation={validationSpy} />);
+
+  return { sut, validationSpy };
 };
 
 describe('Login component', () => {
@@ -42,5 +57,35 @@ describe('Login component', () => {
     const formButton = getByTestId('form-button') as HTMLButtonElement;
 
     expect(formButton.disabled).toBe(true);
+  });
+
+  test('Should call Validation with correct e-mail', () => {
+    const {
+      sut: { getByTestId },
+      validationSpy,
+    } = makeSut();
+
+    const emailInput = getByTestId('email');
+
+    fireEvent.input(emailInput, { target: { value: 'any_email' } });
+
+    expect(validationSpy.input).toEqual({
+      email: 'any_email',
+    });
+  });
+
+  test('Should call Validation with correct password', () => {
+    const {
+      sut: { getByTestId },
+      validationSpy,
+    } = makeSut();
+
+    const passwordInput = getByTestId('password');
+
+    fireEvent.input(passwordInput, { target: { value: 'any_password' } });
+
+    expect(validationSpy.input).toEqual({
+      password: 'any_password',
+    });
   });
 });
