@@ -8,7 +8,14 @@ type FormErrorProps = {
 
 export type FormStateProps = {
   isLoading: boolean;
+  email: string;
+  password: string;
   error: FormErrorProps;
 };
 
-export const FormContext = createContext<FormStateProps | {}>({});
+type ContextProps = {
+  state: FormStateProps;
+  setFormState: (value: FormStateProps) => void;
+};
+
+export const FormContext = createContext<ContextProps | {}>({});
