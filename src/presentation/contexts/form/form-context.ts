@@ -1,3 +1,14 @@
 import { createContext } from 'react';
 
-export const FormContext = createContext(null);
+type FormErrorProps = {
+  email: string;
+  password: string;
+  message: string;
+};
+
+export type FormStateProps = {
+  isLoading: boolean;
+  error: FormErrorProps;
+};
+
+export const FormContext = createContext<FormStateProps | {}>({});

@@ -4,17 +4,19 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import { AuthHeader, AuthLink, Footer } from '@/presentation/components';
 import { Button } from '@/presentation/components/ui/button';
 import { Input } from '@/presentation/components/ui/input';
-import { FormContext } from '@/presentation/contexts/form/form-context';
-
-type FormStateProps = {
-  isLoading: boolean;
-  errorMessage: string;
-};
+import {
+  FormContext,
+  FormStateProps,
+} from '@/presentation/contexts/form/form-context';
 
 export function Login() {
-  const [formState, setFormState] = useState<FormStateProps>({
+  const [formState] = useState<FormStateProps>({
     isLoading: false,
-    errorMessage: '',
+    error: {
+      email: '',
+      password: '',
+      message: '',
+    },
   });
 
   return (
@@ -32,13 +34,13 @@ export function Login() {
             <Input type="email" placeholder="Digite seu e-mail" />
             <Input type="password" placeholder="Digite sua senha" />
 
-            {formState.errorMessage && (
+            {formState.error.message && (
               <span className="text-sm text-red-400 -mt-2">
                 E-mail e ou senha inválidos
               </span>
             )}
 
-            <Button type="submit" data-testid="form-button">
+            <Button type="submit" disabled data-testid="form-button">
               {formState.isLoading && (
                 <AiOutlineLoading className="mr-2 h-4 w-4 animate-spin" />
               )}
